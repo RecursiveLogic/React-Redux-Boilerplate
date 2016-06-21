@@ -7,7 +7,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 const env = process.env.NODE_ENV
 
-let Common = {
+let base = {
     context: path.join(__dirname, 'client'),
     entry: './index.js',
     output: {
@@ -63,7 +63,7 @@ let Common = {
 }
 
 if (env === 'development') {
-    module.exports = webpackMerge(Common, {
+    module.exports = webpackMerge(base, {
         output: {
             filename: 'application.js'
         },
@@ -83,7 +83,7 @@ if (env === 'development') {
 }
 
 if (env === 'production') {
-    module.exports = webpackMerge(Common, {
+    module.exports = webpackMerge(base, {
         output: {
             filename: 'bundle.[hash].js'
         },
