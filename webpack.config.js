@@ -51,8 +51,7 @@ let base = {
         return [
             require('postcss-inline-media'),
             require('postcss-simple-vars')({
-              variables: require(path.join(__dirname, 'client', 'style',
-                  'vendor', 'variables.js'))
+              variables: require(path.join(__dirname, 'client', 'styles', 'variables.js'))
             }),
             require('precss'),
             require('postcss-flexbox'),
