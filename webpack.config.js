@@ -84,11 +84,11 @@ if (env === 'development') {
 if (env === 'production') {
     module.exports = webpackMerge(base, {
         output: {
-            filename: 'bundle.[hash].js'
+            filename: '/bundle.[hash].js'
         },
         plugins: [
             new webpackClean([path.join(__dirname, 'static')]),
-            new extractTextPlugin('bundle.[hash].css', {
+            new extractTextPlugin('/bundle.[hash].css', {
                 allChunks: true
             }),
             new webpack.DefinePlugin({
