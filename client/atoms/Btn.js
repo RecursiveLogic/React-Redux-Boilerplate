@@ -1,11 +1,11 @@
 import React from 'react'
 
-const BtnDefault = (props) => {
+const Btn = (props) => {
     return (
         <button onClick={props.onClick}>
-            { props.btnText }
+            { props.text }
         </button>
     )
 }
 
-export default BtnDefault
+export default Btn

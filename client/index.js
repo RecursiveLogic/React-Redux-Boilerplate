@@ -6,13 +6,13 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import store from './store/configStore'
 
 import Root from './containers/Root'
-import Home from './containers/Home'
+import App from './containers/App'
 
 ReactDOM.render(
     <Provider store={store}>
         <Router history={hashHistory}>
             <Route path='/' component={Root}>
-                <IndexRoute component={Home} />
+                <IndexRoute component={App} />
             </Route>
         </Router>
     </Provider>,
