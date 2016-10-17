@@ -9,12 +9,12 @@ import Root from './containers/Root'
 import App from './containers/App'
 
 ReactDOM.render(
-    <Provider store={store}>
-        <Router history={hashHistory}>
-            <Route path='/' component={Root}>
-                <IndexRoute component={App} />
-            </Route>
-        </Router>
-    </Provider>,
-    document.getElementById('application')
+  <Provider store={store}>
+    <Router history={hashHistory}>
+      <Route path='/' component={Root}>
+        <IndexRoute component={App} />
+      </Route>
+    </Router>
+  </Provider>,
+  document.getElementById('application')
 )
