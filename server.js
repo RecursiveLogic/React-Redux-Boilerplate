@@ -1,6 +1,8 @@
 const express = require('express')
-const app = express()
 const path = require('path')
+
+const app = express()
+const port = process.env.PORT || 8080
 const staticPath = path.join(__dirname, 'static')
 
 app.use(express.static(staticPath))
@@ -11,6 +13,4 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(process.env.PORT || 8080, () => {
-  console.log('🌎Listening on port:', process.env.PORT || 8080)
-})
+app.listen(port, () => console.log('🌎 Listening on port:', port))
