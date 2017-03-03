@@ -5,12 +5,12 @@ import sinon from 'sinon'
 
 import Btn from '../../client/components/common/Btn'
 
-describe('<BtnDefault />', () => {
-    it('should click when triggered', () => {
-        const handleButtonClick = sinon.spy()
-        const wrapper = mount(<BtnDefault onClick={handleButtonClick} />)
+describe('<Btn />', () => {
+  it('should click when triggered', () => {
+    const handleButtonClick = sinon.spy()
+    const wrapper = mount(<Btn onClick={handleButtonClick} />)
 
-        wrapper.find('button').simulate('click', { preventDefault: () => {} })
-        expect(handleButtonClick.calledOnce).to.equal(true)
-    })
+    wrapper.find('button').simulate('click', { preventDefault: () => {} })
+    expect(handleButtonClick.calledOnce).to.equal(true)
+  })
 })
