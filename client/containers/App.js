@@ -7,12 +7,12 @@ import Btn from '../atoms/Btn'
 
 class App extends Component {
   render() {
-    const { count, dispatch } = this.props
+    const { count, increment } = this.props
 
     return (
       <div>
         { count }
-        <Btn onClick={() => dispatch(increment())} text='Click' />
+        <Btn onClick={() => increment()} text='Click' />
       </div>
     )
   }
@@ -23,4 +23,4 @@ const mapStateToProps = (state) => {
   return { count }
 }
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps, { increment })(App)

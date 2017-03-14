@@ -5,9 +5,10 @@ const initialState = {
 const counter = (state = initialState, action) => {
   switch (action.type) {
     case 'INCREMENT':
-      return Object.assign({}, state, {
+      return {
+        ...state,
         count: ++state.count
-      })
+      }
     default:
       return state;
   }
