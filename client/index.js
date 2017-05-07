@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { BrowserRouter, IndexRoute, Route, Switch } from 'react-router-dom'
+import { HashRouter, IndexRoute, Route, Switch } from 'react-router-dom'
 
 import store from './store/configStore'
 
@@ -11,11 +11,11 @@ import Root from './containers/Root'
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         <Route exact path='/' component={Root} />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>,
   document.getElementById('application')
 )
