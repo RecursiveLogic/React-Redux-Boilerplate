@@ -1,19 +1,16 @@
-require('babel-register')();
-var jsdom = require('jsdom').jsdom;
-var exposedProperties = ['window', 'navigator', 'document'];
+require('babel-register')()
+const { JSDOM } = require('jsdom')
 
-global.document = jsdom('');
-global.window = document.defaultView;
+const exposedProperties = ['window', 'navigator', 'document']
+const DOM = new JSDOM()
 
-Object.keys(document.defaultView).forEach((property) => {
+Object.keys(DOM).forEach((property) => {
   if (typeof global[property] === 'undefined') {
-    exposedProperties.push(property);
-    global[property] = document.defaultView[property];
+    exposedProperties = [...exposedProperties, property]
+    global[property] = document.defaultView[property]
   }
-});
+})
 
-global.navigator = {
-  userAgent: 'node.js'
-};
+DOM.navigator = { userAgent: 'node.js' }
 
-documentRef = document;
+documentRef = DOM
