@@ -1,8 +1,9 @@
 require('babel-register')()
 const { JSDOM } = require('jsdom')
 
-const exposedProperties = ['window', 'navigator', 'document']
 const DOM = new JSDOM()
+
+let exposedProperties = ['window', 'navigator', 'document']
 
 Object.keys(DOM).forEach((property) => {
   if (typeof global[property] === 'undefined') {
