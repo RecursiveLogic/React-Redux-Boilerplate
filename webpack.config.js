@@ -10,8 +10,7 @@ const base = {
   context: path.join(__dirname, 'client'),
   entry: './index.js',
   output: {
-    path: path.join(__dirname, 'static'),
-    filename: 'bundle.js'
+    path: path.join(__dirname, 'static')
   },
   resolve: {
     extensions: ['*', '.js', '.jsx', '.css'],
@@ -96,7 +95,8 @@ if (env === 'development') {
 if (env === 'production') {
   module.exports = webpackMerge(base, {
     output: {
-      filename: 'bundle.[hash].js'
+      filename: 'bundle.[hash].js',
+      publicPath: '/'
     },
     plugins: [
       new webpackClean([path.join(__dirname, 'static')]),
