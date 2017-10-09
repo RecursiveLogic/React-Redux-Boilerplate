@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import CSSModules from 'react-css-modules'
+import RCM from 'react-css-modules'
 
 import Style from '../styles/atoms/Btn'
 
@@ -16,4 +16,4 @@ Btn.propTypes = {
   text: PropTypes.string.isRequired
 }
 
-export default CSSModules(Btn, Style)
+export default RCM(Btn, Style)

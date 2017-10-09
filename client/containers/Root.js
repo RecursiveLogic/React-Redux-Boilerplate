@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import CSSModules from 'react-css-modules'
+import RCM from 'react-css-modules'
 
 import { increment } from '../actions/counterActions'
 
@@ -26,4 +26,4 @@ const mapStateToProps = (state) => {
   return { count }
 }
 
-export default connect(mapStateToProps, { increment })(CSSModules(Root, Style))
+export default connect(mapStateToProps, { increment })(RCM(Root, Style))

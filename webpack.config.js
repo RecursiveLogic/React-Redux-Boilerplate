@@ -1,10 +1,10 @@
+const path = require('path')
+const extractTextPlugin = require('extract-text-webpack-plugin')
+const htmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const webpackClean = require('clean-webpack-plugin')
 const webpackMerge = require('webpack-merge')
-const extractTextPlugin = require('extract-text-webpack-plugin')
-const htmlWebpackPlugin = require('html-webpack-plugin')
-const path = require('path')
-const env = process.env.NODE_ENV
+const { NODE_ENV } = process.env
 
 const base = {
   context: path.join(__dirname, 'client'),
@@ -71,7 +71,7 @@ const base = {
   ]
 }
 
-if (env === 'development') {
+if (NODE_ENV === 'development') {
   module.exports = webpackMerge(base, {
     output: {
       filename: 'application.js'
@@ -92,7 +92,7 @@ if (env === 'development') {
   })
 }
 
-if (env === 'production') {
+if (NODE_ENV === 'production') {
   module.exports = webpackMerge(base, {
     output: {
       filename: 'bundle.[hash].js',
